@@ -117,4 +117,26 @@ resultado: se crea un archivo hello4.o
 
 10- Vincular hello4.o con la biblioteca estándar y generar el ejecutable:
 
+comando: gcc -o hello4 hello4.o
 
+respuesta:
+```
+hello4.o:hello4.c:(.text+0x1c): referencia a `prontf' sin definir
+collect2.exe: error: ld returned 1 exit status
+```
+No encuentra la definicion de prontf y no crea el ejecutable. 
+
+11- Corregir en hello5.c y generar el ejecutable.
+
+12- Ejecutar y analizar el resultado.
+
+13- Corregir en hello6.c y empezar de nuevo.
+
+14- Escribir hello7.c, una nueva variante:
+```
+int main(void){
+ int i=42;
+   printf("La respuesta es %d\n", i);
+}
+```
+15- Explicar porqué funciona.
