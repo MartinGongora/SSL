@@ -1,5 +1,5 @@
 # TP 1
-1- Escribir hello2.c, que es una variante de hello.c:
+_1- Escribir hello2.c, que es una variante de hello.c:_
 
 ```
 #include <stdio.h>
@@ -8,14 +8,14 @@ int/*medio*/main(void){
   int i=42;
   prontf("La respuesta es %d\n");
 ```
-2- Preprocesar hello2.c, no compilar, y generar hello2.i. Analizar su
-contenido:
+_2- Preprocesar hello2.c, no compilar, y generar hello2.i. Analizar su
+contenido:_
 
 comando: gcc -E hello2.c > hello2.i
 
 resultado: Al principio del archivo hello2.i aparece todo el contenido de "stdio.h". Al final de hello2.i aparece el codigo escrito de hello2.c sin el comentario. 
 
-3- Escribir hello3.c, una nueva variante:
+_3- Escribir hello3.c, una nueva variante:_
 
 ```
 int printf(const char *s, ...);
@@ -24,11 +24,11 @@ int main(void){
   int i=42;
   prontf("La respuesta es %d\n");
 ```
-4- Investigar la semántica de la primera línea:
+_4- Investigar la semántica de la primera línea:_
 
 
-5- Preprocesar hello3.c, no compilar, y generar hello3.i. Buscar diferencias
-entre hello3.c y hello3.i.
+_5- Preprocesar hello3.c, no compilar, y generar hello3.i. Buscar diferencias
+entre hello3.c y hello3.i._
 
 comando: gcc -E hello3.c > hello3.c
 
@@ -47,7 +47,7 @@ int main(void){
 ```
 La diferencia son las primeras cuatro lineas, luego son iguales. 
 
-6- Compilar el resultado y generar hello3.s, no ensamblar:
+_6- Compilar el resultado y generar hello3.s, no ensamblar:_
 
 comando: gcc -S hello3.c
 
@@ -63,8 +63,8 @@ Nos da una advertencia por no estar declarada prontf y un error que indica un pr
 ```
 	.file	"hello3.c"
  ```
- 7- Corregir en el nuevo archivo hello4.c y empezar de nuevo, generar
-hello4.s, no ensamblar:
+ _7- Corregir en el nuevo archivo hello4.c y empezar de nuevo, generar
+hello4.s, no ensamblar:_
 
 comando: gcc -S hello4.c
 
@@ -77,7 +77,7 @@ hello4.c:5:2: warning: implicit declaration of function ‘prontf’ [-Wimplicit
 ```
 Vuelve a darnos la misma advertencia pero igualmente genera el archivo hello.s con codigo assembler.
 
-8- Investigar hello4.s:
+_8- Investigar hello4.s:_
 ```
 	.file	"hello4.c"
 	.def	__main;	.scl	2;	.type	32;	.endef
@@ -110,13 +110,13 @@ main:
 ```
 Hay un codigo assembler donde se puede observar la llamada a prontf en la linea "call prontf"
 
-9- Ensamblar hello4.s en hello4.o, no vincular:
+_9- Ensamblar hello4.s en hello4.o, no vincular:_
 
 comando: as -o hello4.o hello4.s
 
 resultado: se crea un archivo hello4.o 
 
-10- Vincular hello4.o con la biblioteca estándar y generar el ejecutable:
+_10- Vincular hello4.o con la biblioteca estándar y generar el ejecutable:_
 
 comando: gcc -o hello4 hello4.o
 
@@ -127,13 +127,13 @@ collect2.exe: error: ld returned 1 exit status
 ```
 No encuentra la definicion de prontf y no crea el ejecutable. 
 
-11- Corregir en hello5.c y generar el ejecutable:
+_11- Corregir en hello5.c y generar el ejecutable:_
 
 comando: gcc -o hello5 hello5.c 
 
 resultado: se crea el ejecutable. 
 
-12- Ejecutar y analizar el resultado:
+_12- Ejecutar y analizar el resultado:_
 
 comando: hello5.exe
 
@@ -143,7 +143,7 @@ La respuesta es 3306720
 ```
 Debido a que no recibe el int para mostrar, muestra un int cualquiera. 
 
-13- Corregir en hello6.c y empezar de nuevo:
+_13- Corregir en hello6.c y empezar de nuevo:_
 
 comando: gcc -o hello6 hello6.c
 
@@ -157,7 +157,7 @@ La respuesta es 42
 ```
 Esta vez imprime 42 que es el int guardado en la variable i. 
 
-14- Escribir hello7.c, una nueva variante:
+_14- Escribir hello7.c, una nueva variante:_
 ```
 int main(void){
  int i=42;
@@ -183,7 +183,7 @@ resultado:
 ```
 La respuesta es 42
 ```
-15- Explicar porqué funciona.
+_15- Explicar porqué funciona._
 
 Las advertencias nos dicen que printf no esta declarada, sin embargo, el linker enlaza por defecto con la biblioteca standar por lo cual define printf permitiendo que funcione sin problemas. 
 
