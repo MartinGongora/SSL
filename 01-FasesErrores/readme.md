@@ -109,5 +109,12 @@ main:
 ```
 Hay un codigo assembler donde se puede observar la llamada a prontf en la linea "call prontf"
 
-9-
+9- Ensamblar hello4.s en hello4.o, no vincular:
+
+comando: as -o hello4.o hello4.s
+
+resultado: se crea un archivo hello4.o 
+
+10- Vincular hello4.o con la biblioteca estándar y generar el ejecutable:
+
 
