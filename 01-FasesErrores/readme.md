@@ -26,6 +26,7 @@ int main(void){
 ```
 4- Investigar la semántica de la primera línea:
 
+
 5- Preprocesar hello3.c, no compilar, y generar hello3.i. Buscar diferencias
 entre hello3.c y hello3.i.
 
@@ -126,11 +127,35 @@ collect2.exe: error: ld returned 1 exit status
 ```
 No encuentra la definicion de prontf y no crea el ejecutable. 
 
-11- Corregir en hello5.c y generar el ejecutable.
+11- Corregir en hello5.c y generar el ejecutable:
 
-12- Ejecutar y analizar el resultado.
+comando: gcc -o hello5 hello5.c 
 
-13- Corregir en hello6.c y empezar de nuevo.
+resultado: se crea el ejecutable. 
+
+12- Ejecutar y analizar el resultado:
+
+comando: hello5.exe
+
+resultado: 
+```
+La respuesta es 3306720
+```
+Debido a que no recibe el int para mostrar, muestra un int cualquiera. 
+
+13- Corregir en hello6.c y empezar de nuevo:
+
+comando: gcc -o hello6 hello6.c
+
+resultado: se crea el ejecutable.
+
+comando: hello6.exe
+
+resultado: 
+```
+La respuesta es 42
+```
+Esta vez imprime 42 que es el int guardado en la variable i. 
 
 14- Escribir hello7.c, una nueva variante:
 ```
@@ -139,4 +164,29 @@ int main(void){
    printf("La respuesta es %d\n", i);
 }
 ```
+comando: gcc -o hello7 hello7.c
+
+resultado: 
+```
+hello7.c: In function ‘main’:
+hello7.c:3:2: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+printf("La respuesta es %d\n",i);
+^
+hello7.c:3:2: warning: incompatible implicit declaration of built-in function ‘printf’
+hello7.c:3:2: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+```
+Se crea el ejecutable pero nos lanza dos advertencias. 
+
+comando: hello7.exe
+
+resultado:
+```
+La respuesta es 42
+```
 15- Explicar porqué funciona.
+
+Las advertencias nos dicen que printf no esta declarada, sin embargo, el linker enlaza por defecto con la biblioteca standar por lo cual define printf permitiendo que funcione sin problemas. 
+
+
+
+
