@@ -26,6 +26,7 @@ int main(void){
 ```
 _4- Investigar la semántica de la primera línea:_
 
+La primera linea indica el prototipado de printf, el primer argumento indica el tipo de argumento que recibe, y el "..." indica que la cantidad de argumentos de ese tipo puede variar. 
 
 _5- Preprocesar hello3.c, no compilar, y generar hello3.i. Buscar diferencias
 entre hello3.c y hello3.i._
