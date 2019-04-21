@@ -186,7 +186,7 @@ La respuesta es 42
 ```
 _15- Explicar porqué funciona._
 
-Las advertencias nos dicen que printf no esta declarada, sin embargo, el linker enlaza por defecto con la biblioteca standar por lo cual define printf permitiendo que funcione sin problemas. 
+Las advertencias nos dicen que printf esta declarada implicitamente. Esto funciona ya que C permite hacer declaraciones implicitas, y el linker enlaza por defecto con la biblioteca standar. 
 
 
 
